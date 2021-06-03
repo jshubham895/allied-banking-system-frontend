@@ -12,13 +12,13 @@ function Accounts() {
   }, []);
 
   const getAccounts = async () => {
-    await Axios.get("http://localhost:3001/accounts").then((response) => {
+    await Axios.get("https://allied-banking-system.herokuapp.com/accounts").then((response) => {
       setAccountsList(response.data.reverse());
     });
   };
 
   const deleteAccount = async (_id) => {
-    await Axios.delete(`http://localhost:3001/accounts/${_id}`);
+    await Axios.delete(`https://allied-banking-system.herokuapp.com/accounts/${_id}`);
     getAccounts();
   };
 

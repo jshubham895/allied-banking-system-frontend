@@ -12,7 +12,7 @@ function Transcations() {
   }, []);
 
   const getAccounts = async () => {
-    await Axios.get("http://localhost:3001/transactions").then((response) => {
+    await Axios.get("https://allied-banking-system.herokuapp.com/transactions").then((response) => {
       setTransactionsList(response.data.reverse());
     });
   };
