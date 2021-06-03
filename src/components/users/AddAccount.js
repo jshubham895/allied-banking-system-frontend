@@ -20,7 +20,10 @@ const AddAccount = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await Axios.post("http://localhost:3001/accounts", account);
+    await Axios.post(
+      "https://allied-banking-system.herokuapp.com/accounts",
+      account
+    );
     history.push("/accounts");
   };
 
@@ -43,9 +46,7 @@ const AddAccount = () => {
             />
           </div>
           <div className="mb-3">
-            <label className="form-label">
-              Email address
-            </label>
+            <label className="form-label">Email address</label>
             <input
               type="email"
               className="form-control"
