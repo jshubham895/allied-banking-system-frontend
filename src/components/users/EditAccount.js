@@ -25,13 +25,13 @@ const EditAccount = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await Axios.put(`https://allied-banking-system.herokuapp.com/accounts/${accountId}`, account);
+    await Axios.put(`http://localhost:3001/accounts/${accountId}`, account);
     history.push("/accounts");
   };
 
   const loadAccount = async () => {
     const result = await Axios.get(
-      `https://allied-banking-system.herokuapp.com/accounts/${accountId}`
+      `http://localhost:3001/accounts/${accountId}`
     );
     setAccount(result.data);
   };

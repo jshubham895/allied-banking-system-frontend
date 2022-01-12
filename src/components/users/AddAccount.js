@@ -20,10 +20,7 @@ const AddAccount = () => {
 
 	const onSubmit = async (e) => {
 		e.preventDefault();
-		await Axios.post(
-			"https://allied-banking-system.herokuapp.com/accounts",
-			account
-		);
+		await Axios.post("http://localhost:3001/accounts", account);
 		history.push("/accounts");
 	};
 
@@ -64,6 +61,7 @@ const AddAccount = () => {
 							placeholder="Enter your balance"
 							name="balance"
 							value={balance}
+							min={0}
 							onChange={(e) => onInputChange(e)}
 						/>
 					</div>
