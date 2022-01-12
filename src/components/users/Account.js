@@ -52,11 +52,7 @@ const Account = () => {
 
 	const loadAccount = async () => {
 		const result = await Axios.get(
-<<<<<<< HEAD
 			`https://allied-banking-system.herokuapp.com/accounts/${accountId}`
-=======
-			`http://localhost:3001/accounts/${accountId}`
->>>>>>> edeb0b032f3ba54ddfc678e5a76e0dd2bd15184c
 		);
 		setAccount(result.data);
 		setBalance(result.data.balance);
@@ -64,45 +60,29 @@ const Account = () => {
 	};
 
 	const loadAccounts = async () => {
-<<<<<<< HEAD
 		const result = await Axios.get(
 			`https://allied-banking-system.herokuapp.com/accounts`
 		);
-=======
-		const result = await Axios.get(`http://localhost:3001/accounts`);
->>>>>>> edeb0b032f3ba54ddfc678e5a76e0dd2bd15184c
 		setAccountsList(result.data);
 	};
 
 	const transactions = async () => {
 		const result = await Axios.get(
-<<<<<<< HEAD
 			`https://allied-banking-system.herokuapp.com/transactions/${account.name}`
-=======
-			`http://localhost:3001/transactions/${account.name}`
->>>>>>> edeb0b032f3ba54ddfc678e5a76e0dd2bd15184c
 		);
 		setTransactionsList(result.data);
 	};
 
 	// const sentMoney = async () => {
 	// 	const result = await Axios.get(
-<<<<<<< HEAD
 	// 		`https://allied-banking-system.herokuapp.com/transactions/from/${account.name}`
-=======
-	// 		`http://localhost:3001/transactions/from/${account.name}`
->>>>>>> edeb0b032f3ba54ddfc678e5a76e0dd2bd15184c
 	// 	);
 	// 	setSenderList(result.data);
 	// };
 
 	// const receivedMoney = async () => {
 	// 	const result = await Axios.get(
-<<<<<<< HEAD
 	// 		`https://allied-banking-system.herokuapp.com/transactions/to/${account.name}`
-=======
-	// 		`http://localhost:3001/transactions/to/${account.name}`
->>>>>>> edeb0b032f3ba54ddfc678e5a76e0dd2bd15184c
 	// 	);
 	// 	setReceiverList(result.data);
 	// };
@@ -111,7 +91,6 @@ const Account = () => {
 		e.preventDefault();
 		console.log(isOpen);
 		try {
-<<<<<<< HEAD
 			const response = await Axios.post(
 				"https://allied-banking-system.herokuapp.com/transactions",
 				{
@@ -121,14 +100,6 @@ const Account = () => {
 					amountExchange: amountExchange
 				}
 			);
-=======
-			const response = await Axios.post("http://localhost:3001/transactions", {
-				from: from,
-				to: to,
-				balance: balance,
-				amountExchange: amountExchange
-			});
->>>>>>> edeb0b032f3ba54ddfc678e5a76e0dd2bd15184c
 			setRes(response);
 			togglePopup();
 			// console.log(response);

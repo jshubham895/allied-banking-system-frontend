@@ -23,7 +23,6 @@ const EditAccount = () => {
 		loadAccount();
 	}, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-<<<<<<< HEAD
 	const onSubmit = async (e) => {
 		e.preventDefault();
 		await Axios.put(
@@ -39,20 +38,6 @@ const EditAccount = () => {
 		);
 		setAccount(result.data);
 	};
-=======
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    await Axios.put(`http://localhost:3001/accounts/${accountId}`, account);
-    history.push("/accounts");
-  };
-
-  const loadAccount = async () => {
-    const result = await Axios.get(
-      `http://localhost:3001/accounts/${accountId}`
-    );
-    setAccount(result.data);
-  };
->>>>>>> edeb0b032f3ba54ddfc678e5a76e0dd2bd15184c
 
 	return (
 		<div className="container">

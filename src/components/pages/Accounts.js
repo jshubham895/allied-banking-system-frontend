@@ -13,25 +13,17 @@ function Accounts() {
 	}, []);
 
 	const getAccounts = async () => {
-<<<<<<< HEAD
 		await Axios.get(
 			"https://allied-banking-system.herokuapp.com/accounts"
 		).then((response) => {
-=======
-		await Axios.get("http://localhost:3001/accounts").then((response) => {
->>>>>>> edeb0b032f3ba54ddfc678e5a76e0dd2bd15184c
 			setAccountsList(response.data.reverse());
 		});
 	};
 
 	const deleteAccount = async (_id) => {
-<<<<<<< HEAD
 		await Axios.delete(
 			`https://allied-banking-system.herokuapp.com/accounts/${_id}`
 		);
-=======
-		await Axios.delete(`http://localhost:3001/accounts/${_id}`);
->>>>>>> edeb0b032f3ba54ddfc678e5a76e0dd2bd15184c
 		getAccounts();
 	};
 
