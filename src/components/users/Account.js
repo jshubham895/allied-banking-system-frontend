@@ -52,7 +52,7 @@ const Account = () => {
 
 	const loadAccount = async () => {
 		const result = await Axios.get(
-			`http://localhost:3001/accounts/${accountId}`
+			`https://allied-banking-system.herokuapp.com/accounts/${accountId}`
 		);
 		setAccount(result.data);
 		setBalance(result.data.balance);
@@ -60,27 +60,29 @@ const Account = () => {
 	};
 
 	const loadAccounts = async () => {
-		const result = await Axios.get(`http://localhost:3001/accounts`);
+		const result = await Axios.get(
+			`https://allied-banking-system.herokuapp.com/accounts`
+		);
 		setAccountsList(result.data);
 	};
 
 	const transactions = async () => {
 		const result = await Axios.get(
-			`http://localhost:3001/transactions/${account.name}`
+			`https://allied-banking-system.herokuapp.com/transactions/${account.name}`
 		);
 		setTransactionsList(result.data);
 	};
 
 	// const sentMoney = async () => {
 	// 	const result = await Axios.get(
-	// 		`http://localhost:3001/transactions/from/${account.name}`
+	// 		`https://allied-banking-system.herokuapp.com/transactions/from/${account.name}`
 	// 	);
 	// 	setSenderList(result.data);
 	// };
 
 	// const receivedMoney = async () => {
 	// 	const result = await Axios.get(
-	// 		`http://localhost:3001/transactions/to/${account.name}`
+	// 		`https://allied-banking-system.herokuapp.com/transactions/to/${account.name}`
 	// 	);
 	// 	setReceiverList(result.data);
 	// };
@@ -89,12 +91,15 @@ const Account = () => {
 		e.preventDefault();
 		console.log(isOpen);
 		try {
-			const response = await Axios.post("http://localhost:3001/transactions", {
-				from: from,
-				to: to,
-				balance: balance,
-				amountExchange: amountExchange
-			});
+			const response = await Axios.post(
+				"https://allied-banking-system.herokuapp.com/transactions",
+				{
+					from: from,
+					to: to,
+					balance: balance,
+					amountExchange: amountExchange
+				}
+			);
 			setRes(response);
 			togglePopup();
 			// console.log(response);
