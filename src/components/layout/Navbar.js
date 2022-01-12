@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Navbar = () => {
 	return (
-		<nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+		<nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
 			<div className="container-fluid">
 				<NavLink className="nav-link navbar-brand " exact to="/">
 					<FontAwesomeIcon icon="university" className="mr-2" />
