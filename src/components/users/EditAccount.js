@@ -26,7 +26,7 @@ const EditAccount = () => {
 	const onSubmit = async (e) => {
 		e.preventDefault();
 		await Axios.put(
-			`https://allied-banking-system.herokuapp.com/accounts/${accountId}`,
+			`https://us-central1-allied-banking-system-backend.cloudfunctions.net/app/accounts/${accountId}`,
 			account
 		);
 		history.push("/accounts");
@@ -34,7 +34,7 @@ const EditAccount = () => {
 
 	const loadAccount = async () => {
 		const result = await Axios.get(
-			`https://allied-banking-system.herokuapp.com/accounts/${accountId}`
+			`https://us-central1-allied-banking-system-backend.cloudfunctions.net/app/accounts/${accountId}`
 		);
 		setAccount(result.data);
 	};

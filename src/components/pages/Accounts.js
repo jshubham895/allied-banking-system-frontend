@@ -22,7 +22,7 @@ function Accounts() {
 
 	const getAccounts = async () => {
 		await Axios.get(
-			"https://allied-banking-system.herokuapp.com/accounts"
+			"https://us-central1-allied-banking-system-backend.cloudfunctions.net/app/accounts"
 		).then((response) => {
 			setAccountsList(response.data.reverse());
 		});
@@ -30,7 +30,7 @@ function Accounts() {
 
 	const deleteAccount = async (_id) => {
 		await Axios.delete(
-			`https://allied-banking-system.herokuapp.com/accounts/${_id}`
+			`https://us-central1-allied-banking-system-backend.cloudfunctions.net/app/accounts/${_id}`
 		);
 		getAccounts();
 	};

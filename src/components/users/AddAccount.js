@@ -21,7 +21,7 @@ const AddAccount = () => {
 	const onSubmit = async (e) => {
 		e.preventDefault();
 		await Axios.post(
-			"https://allied-banking-system.herokuapp.com/accounts",
+			"https://us-central1-allied-banking-system-backend.cloudfunctions.net/app/accounts",
 			account
 		);
 		history.push("/accounts");

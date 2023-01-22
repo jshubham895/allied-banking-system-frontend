@@ -52,7 +52,7 @@ const Account = () => {
 
 	const loadAccount = async () => {
 		const result = await Axios.get(
-			`https://allied-banking-system.herokuapp.com/accounts/${accountId}`
+			`https://us-central1-allied-banking-system-backend.cloudfunctions.net/app/accounts/${accountId}`
 		);
 		setAccount(result.data);
 		setBalance(result.data.balance);
@@ -61,28 +61,28 @@ const Account = () => {
 
 	const loadAccounts = async () => {
 		const result = await Axios.get(
-			`https://allied-banking-system.herokuapp.com/accounts`
+			`https://us-central1-allied-banking-system-backend.cloudfunctions.net/app/accounts`
 		);
 		setAccountsList(result.data);
 	};
 
 	const transactions = async () => {
 		const result = await Axios.get(
-			`https://allied-banking-system.herokuapp.com/transactions/${account.name}`
+			`https://us-central1-allied-banking-system-backend.cloudfunctions.net/app/transactions/${account.name}`
 		);
 		setTransactionsList(result.data);
 	};
 
 	// const sentMoney = async () => {
 	// 	const result = await Axios.get(
-	// 		`https://allied-banking-system.herokuapp.com/transactions/from/${account.name}`
+	// 		`https://us-central1-allied-banking-system-backend.cloudfunctions.net/app/transactions/from/${account.name}`
 	// 	);
 	// 	setSenderList(result.data);
 	// };
 
 	// const receivedMoney = async () => {
 	// 	const result = await Axios.get(
-	// 		`https://allied-banking-system.herokuapp.com/transactions/to/${account.name}`
+	// 		`https://us-central1-allied-banking-system-backend.cloudfunctions.net/app/transactions/to/${account.name}`
 	// 	);
 	// 	setReceiverList(result.data);
 	// };
@@ -92,7 +92,7 @@ const Account = () => {
 		console.log(isOpen);
 		try {
 			const response = await Axios.post(
-				"https://allied-banking-system.herokuapp.com/transactions",
+				"https://us-central1-allied-banking-system-backend.cloudfunctions.net/app/transactions",
 				{
 					from: from,
 					to: to,
